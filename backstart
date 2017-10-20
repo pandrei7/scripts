@@ -1,0 +1,4 @@
+for COMMAND in "$@"
+do
+    nohup $COMMAND &>/dev/null &
+done

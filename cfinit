@@ -1,0 +1,18 @@
+SRCEXTENSION=.cc
+DIRNAME=""
+
+if [ $# -eq 1 ]; then
+  DIRNAME=$1
+elif [ $# -eq 2 ]; then
+  DIRNAME=$1
+  SRCEXTENSION=$2
+else
+  echo "Use the command like this: $0 directory_name [source_extension]"
+  exit 1
+fi
+
+mkdir $DIRNAME
+cd $DIRNAME
+
+touch main$SRCEXTENSION
+cp ~/Scripts/cfinit_makefile$SRCEXTENSION ./Makefile
